@@ -53,11 +53,11 @@ def transparentarea(image):
     cv2.addWeighted(imgcop,0.5,img,0.5,0,img)
     cv2.polylines(image,[pts],True,(0,255,0))
 
-cap = cv2.VideoCapture('video2.mp4')
+cap = cv2.VideoCapture('./Resources/Videos/video2.mp4')
 #cap = cv2.VideoCapture(0);
 #url = 'https://192.168.43.1:8080/video'
 #cap = cv2.VideoCapture(url)
-cascadeclasifier = cv2.CascadeClassifier('TrainedHaarCascadeCar.xml')
+cascadeclasifier = cv2.CascadeClassifier('./Resources/XmlFiles/TrainedHaarCascadeCar.xml')
 
 ret, fram1 = cap.read()
 ret, fram2 = cap.read()
