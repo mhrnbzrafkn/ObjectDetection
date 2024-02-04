@@ -1,10 +1,9 @@
-import numpy as np
 import cv2
 
-face_cascade = cv2.CascadeClassifier('./Resources/XmlFiles/Default/haarcascade_frontalface_alt2.xml')
-eye_cascade = cv2.CascadeClassifier('./Resources/XmlFiles/Default/haarcascade_eye_tree_eyeglasses.xml')
+face_cascade = cv2.CascadeClassifier('../data/XmlFiles/Default/haarcascade_frontalface_alt2.xml')
+eye_cascade = cv2.CascadeClassifier('../data/XmlFiles/Default/haarcascade_eye_tree_eyeglasses.xml')
 
-img = cv2.imread('./Resources/Images/img1.jpg')
+img = cv2.imread('../data/Images/img1.jpg')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 faces = face_cascade.detectMultiScale(gray, 1.3, 5)

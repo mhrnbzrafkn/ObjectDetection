@@ -1,8 +1,6 @@
-import cv2 
-import numpy as np
-import matplotlib.pyplot as plt
+import cv2
 
-cap = cv2.VideoCapture('./Resources/Videos/video3.mp4')
+cap = cv2.VideoCapture('../data/Videos/video3.mp4')
 #cap = cv2.VideoCapture(0);
 
 

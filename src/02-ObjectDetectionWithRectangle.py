@@ -10,7 +10,7 @@ def saveResultImage(img, contours, minarea, maxarea, num):
                 crop_img=img[y:y+h,x:x+w]
                 num = num + 1
                 imgname=str(num)
-                imgpath="Result/"+imgname+".jpg"
+                imgpath="../data/Results/"+imgname+".jpg"
                 cv2.imwrite(imgpath,crop_img)
                 print(str(num)+"--"+imgpath+"--"+str(w)+" "+str(h))
                 print("-------------------")
@@ -53,11 +53,11 @@ def transparentarea(image):
     cv2.addWeighted(imgcop,0.5,img,0.5,0,img)
     cv2.polylines(image,[pts],True,(0,255,0))
 
-cap = cv2.VideoCapture('./Resources/Videos/video2.mp4')
+cap = cv2.VideoCapture('../data/videos/video2.mp4')
 #cap = cv2.VideoCapture(0);
 #url = 'https://192.168.43.1:8080/video'
 #cap = cv2.VideoCapture(url)
-cascadeclasifier = cv2.CascadeClassifier('./Resources/XmlFiles/car/TrainedHaarCascadeCar.xml')
+cascadeclasifier = cv2.CascadeClassifier('../data/XmlFiles/car/TrainedHaarCascadeCar.xml')
 
 ret, fram1 = cap.read()
 ret, fram2 = cap.read()
@@ -69,7 +69,7 @@ while cap.isOpened():
     contours = findDiff(fram1, fram2)
     
     ########   save input   ########
-    # saveResultImage(fram1,contours,minarea,maxarea,num)
+    # saveResultImage(fram1,contours,minarea,maxarea, num = 0)
     ################################
     
     ######## draw rectangle ########
